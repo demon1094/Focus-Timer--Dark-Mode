@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+  --darkmode-body-bg: #121214;
+  --darkmode-text-color: #FFFFFF;
+  --darkmode-card-bg: #29292E;
+  --darkmode-card-hover: #0A3442;
+  --darkmode-icon-fill: #C4C4CC;
+
+  --lightmode-body-bg: #EEEEEE;
+  --lightmode-text-color: #323238;
+  --lightmode-card-bg: #E1E1E6;
+  --lightmode-card-hover: #02799D;
+  --lightmode-icon-fill: #323238;
+}
+
+body.dark-mode {
+  color: var(--darkmode-text-color);
+  background: var(--darkmode-body-bg);
+}
+
+body.light-mode {
+  color: var(--lightmode-text-color);
+  background: var(--lightmode-body-bg);
+}
+
+.hide {
+  display: none;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  gap: 20rem;
+}
+
+.timer {
+  width: 32.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.timer-display {
+  display: flex;
+  font-size: 12.6rem;
+  font-weight: 500;
+  user-select: none;
+}
+
+.timer-controls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+button svg path {
+  transition: all 0.12s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+body.dark-mode button svg path {
+  fill: var(--darkmode-icon-fill);
+}
+
+body.light-mode button svg path {
+  fill: var(--lightmode-icon-fill);
+}
+
+body.dark-mode button:hover svg path {
+  fill: #b81d1d;
+}
+
+body.light-mode button:hover svg path {
+  fill: #b81d1d;
+}
+
+.sound-controls {
+  max-width: 30.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3.2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 13.8rem;
+  height: 15.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+  border-radius: 2.4rem;
+}
+
+body.dark-mode .card {
+  background: var(--darkmode-card-bg);
+}
+
+body.light-mode .card {
+  background: var(--lightmode-card-bg);
+}
+
+body.dark-mode .card svg path {
+  fill: var(--darkmode-icon-fill);
+}
+
+body.light-mode .card svg path {
+  fill: var(--lightmode-icon-fill);
+}
+
+.card input[type="range"] {
+  -webkit-appearance: none;
+  width: 9rem;
+  height: 5px;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+
+body.light-mode .card input[type="range"] {
+  background: #323238;
+}
+
+body.dark-mode .card input[type="range"] {
+  background: #fff;
+}
+
+.card input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  cursor: ew-resize;
+}
+
+body.light-mode .card input[type="range"]::-webkit-slider-thumb {
+  background: #323238;
+}
+
+body.dark-mode .card input[type="range"]::-webkit-slider-thumb {
+  background: #fff;
+}
+
+.toogle-theme {
+  position: absolute;
+  top: 7rem;
+  right: 7rem;
+}
+
+@media screen and (max-width: 999px) {
+  .content {
+    gap: 8rem;
+  }
+}
