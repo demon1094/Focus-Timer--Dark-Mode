@@ -49,22 +49,22 @@ export default function() {
   }
 
   
-  elements.forestSoundInput.onchange = () => { 
+  elements.forestSoundInput.oninput = () => { 
     forestAudio.volume = elements.forestSoundInput.value / 30
     checkSoundOn(forestAudio, elements.forestCard)
   }
   
-  elements.rainSoundInput.onchange = () => { 
+  elements.rainSoundInput.oninput = () => { 
     rainAudio.volume = elements.rainSoundInput.value / 30
     checkSoundOn(rainAudio, elements.rainCard)
   }
   
-  elements.lofiSoundInput.onchange = () => { 
+  elements.lofiSoundInput.oninput = () => { 
     lofiAudio.volume = elements.lofiSoundInput.value / 30
     checkSoundOn(lofiAudio, elements.lofiCard)
   }
   
-  elements.fireSoundInput.onchange = () => { 
+  elements.fireSoundInput.oninput = () => { 
     fireAudio.volume = elements.fireSoundInput.value / 30
     checkSoundOn(fireAudio, elements.fireCard)
   }
