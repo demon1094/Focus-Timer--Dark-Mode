@@ -187,6 +187,10 @@ body.dark-mode .card input[type="range"]::-webkit-slider-thumb {
 }
 
 @media screen and (max-width: 768px) {
+  .content {
+    margin-top: 1rem;
+  }
+
   .toogle-theme {
     top: 1rem;
     right: 1rem;
