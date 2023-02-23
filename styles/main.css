@@ -12,13 +12,11 @@
   --darkmode-body-bg: #121214;
   --darkmode-text-color: #FFFFFF;
   --darkmode-card-bg: #29292E;
-  --darkmode-card-hover: #0A3442;
   --darkmode-icon-fill: #C4C4CC;
 
   --lightmode-body-bg: #EEEEEE;
   --lightmode-text-color: #323238;
   --lightmode-card-bg: #E1E1E6;
-  --lightmode-card-hover: #02799D;
   --lightmode-icon-fill: #323238;
 }
 
@@ -121,6 +119,8 @@ body.light-mode button:hover svg path {
   justify-content: space-around;
   padding: 1rem;
   border-radius: 2.4rem;
+  outline: 3px solid transparent;
+  transition: all 0.12s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 body.dark-mode .card {
@@ -151,10 +151,12 @@ body.light-mode .card svg path {
 
 body.light-mode .card input[type="range"] {
   background: #323238;
+  cursor: ew-resize;
 }
 
 body.dark-mode .card input[type="range"] {
   background: #fff;
+  cursor: ew-resize;
 }
 
 .card input[type="range"]::-webkit-slider-thumb {
@@ -162,7 +164,6 @@ body.dark-mode .card input[type="range"] {
   height: 18px;
   width: 18px;
   border-radius: 50%;
-  cursor: ew-resize;
 }
 
 body.light-mode .card input[type="range"]::-webkit-slider-thumb {

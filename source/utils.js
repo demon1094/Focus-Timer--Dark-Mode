@@ -16,7 +16,7 @@ export default function() {
     elements.body.classList.remove('light-mode')
   }
 
-  function updateTimeDisplay(minutes, seconds) {
+  function updateTimerDisplay(minutes, seconds) {
     elements.minutesDisplay.innerText = String(minutes).padStart(2, '00')
     elements.secondsDisplay.innerText = String(seconds).padStart(2, '00')
   }
@@ -25,7 +25,7 @@ export default function() {
     if (value) {
       elements.playButton.classList.remove('hide')
       elements.pauseButton.classList.add('hide')
-      return
+      return  
     }
     elements.playButton.classList.add('hide')
     elements.pauseButton.classList.remove('hide')
@@ -39,13 +39,13 @@ export default function() {
   function resetTimer() {
     clearTimeout(timerTimeOut)
     showPlayButton(true)
-    updateTimeDisplay(25, 0)
+    updateTimerDisplay(25, 0)
   }
 
   function incraseTime() {
     let minutes = Number(elements.minutesDisplay.textContent)
     let seconds = Number(elements.secondsDisplay.textContent)
-    updateTimeDisplay(minutes + 5, seconds)
+    updateTimerDisplay(minutes + 5, seconds)
   }
 
   function decraseTime() {
@@ -53,17 +53,17 @@ export default function() {
     let seconds = Number(elements.secondsDisplay.textContent)
 
     if (minutes > 0) {
-      updateTimeDisplay(minutes - 5, seconds)
+      updateTimerDisplay(minutes - 5, seconds)
     }
     if (minutes < 5) {
-      updateTimeDisplay(0, 0)
+      updateTimerDisplay(0, 0)
       showPlayButton(true)
     }
   }
 
   return {
     toogleTheme,
-    updateTimeDisplay,
+    updateTimerDisplay,
     showPlayButton,
     pauseTimer,
     resetTimer,

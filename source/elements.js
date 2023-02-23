@@ -13,5 +13,15 @@ export const elements = {
   clockButton: document.querySelector('.clock'),
 
   incraseTimeButton: document.querySelector('.incrase-time'),
-  decraseTimeButton: document.querySelector('.decrase-time')
+  decraseTimeButton: document.querySelector('.decrase-time'),
+
+  forestCard: document.querySelector('.forest'),
+  rainCard: document.querySelector('.rain'),
+  lofiCard: document.querySelector('.coffee-shop'),
+  fireCard: document.querySelector('.fire'),
+
+  forestSoundInput: document.getElementById('sound-forest'),
+  rainSoundInput: document.getElementById('sound-rain'),
+  lofiSoundInput: document.getElementById('sound-lofi'),
+  fireSoundInput: document.getElementById('sound-fire'),
 }

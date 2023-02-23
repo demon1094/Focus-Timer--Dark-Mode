@@ -1,10 +1,9 @@
-import Utils from "./utils.js"
 import { elements } from "./elements.js"
 import { timer } from "./timer.js"
-import Sounds from './sounds.js'
+import Utils from "./utils.js"
+import Sounds from "./sounds.js"
 
 const sounds = Sounds()
-
 const utils = Utils()
 
 elements.darkModeButton.addEventListener('click', () => { utils.toogleTheme(), sounds.pressButton() })
