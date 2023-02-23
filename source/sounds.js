@@ -4,10 +4,10 @@ export default function() {
   const buttonPressAudio = new Audio('https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true')
   const kitchenTimer = new Audio('https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true')
   
-  const forestAudio = new Audio()
-  const rainAudio = new Audio()
-  const lofiAudio = new Audio()
-  const fireAudio = new Audio()
+  const forestAudio = new Audio('https://github.com/demon1094/Focus-Timer--Dark-Mode/blob/master/sounds/forest.mp3?raw=true')
+  const rainAudio = new Audio('https://github.com/demon1094/Focus-Timer--Dark-Mode/blob/master/sounds/rain.mp3?raw=true')
+  const lofiAudio = new Audio('https://github.com/demon1094/Focus-Timer--Dark-Mode/blob/master/sounds/lofi.mp3?raw=true')
+  const fireAudio = new Audio('https://github.com/demon1094/Focus-Timer--Dark-Mode/blob/master/sounds/fire.mp3?raw=true')
   
   function pressButton() {
     buttonPressAudio.volume = 0.2
@@ -16,28 +16,6 @@ export default function() {
   
   function timeEnd() {
     kitchenTimer.play()
-  }
-  
-  function setSoundsOn() {
-    forestAudio.src = './sounds/forest.mp3'
-    forestAudio.loop = true
-    forestAudio.volume = 0
-    forestAudio.play()
-
-    rainAudio.src = './sounds/rain.mp3'
-    rainAudio.loop = true
-    rainAudio.volume = 0
-    rainAudio.play()
-
-    lofiAudio.src = './sounds/lofi.mp3'
-    lofiAudio.loop = true
-    lofiAudio.volume = 0
-    lofiAudio.play()
-
-    fireAudio.src = './sounds/fire.mp3'
-    fireAudio.loop = true
-    fireAudio.volume = 0
-    fireAudio.play()
   }
 
   function checkSoundOn(sound, soundCard) {
@@ -48,28 +26,37 @@ export default function() {
     soundCard.style.outline = '3px solid transparent'
   }
 
-  
-  elements.forestSoundInput.oninput = () => { 
+  elements.forestSoundInput.oninput = () => {
+    forestAudio.loop = true
     forestAudio.volume = elements.forestSoundInput.value / 30
+    forestAudio.play()
+
     checkSoundOn(forestAudio, elements.forestCard)
   }
   
-  elements.rainSoundInput.oninput = () => { 
+  elements.rainSoundInput.oninput = () => {
+    rainAudio.loop = true
     rainAudio.volume = elements.rainSoundInput.value / 30
+    rainAudio.play()
+    
     checkSoundOn(rainAudio, elements.rainCard)
   }
   
-  elements.lofiSoundInput.oninput = () => { 
+  elements.lofiSoundInput.oninput = () => {
+    lofiAudio.loop = true
     lofiAudio.volume = elements.lofiSoundInput.value / 30
+    lofiAudio.play()
+    
     checkSoundOn(lofiAudio, elements.lofiCard)
   }
   
   elements.fireSoundInput.oninput = () => { 
+    fireAudio.loop = true
     fireAudio.volume = elements.fireSoundInput.value / 30
+    fireAudio.play()
+
     checkSoundOn(fireAudio, elements.fireCard)
   }
-
-  window.onload = setSoundsOn
   
   return {
     pressButton,
